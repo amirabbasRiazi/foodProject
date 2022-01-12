@@ -18,12 +18,8 @@ public class FoodController {
         this.foodService = foodService;
     }
 
-    @PostMapping(path = "/addDessert")
-    public ResponseEntity<Object> addDessert(@RequestBody Dessert dessert) {
-        return new ResponseEntity<>(foodService.addDessert(dessert) ? HttpStatus.OK : HttpStatus.CONFLICT);
-    }
 
-    @PostMapping(path = "/addFood")
+    @PostMapping(path = "/addfood")
     public ResponseEntity<Object> addFood(@RequestBody Food food) {
         return new ResponseEntity<>(foodService.addFood(food) ? HttpStatus.OK : HttpStatus.CONFLICT);
     }

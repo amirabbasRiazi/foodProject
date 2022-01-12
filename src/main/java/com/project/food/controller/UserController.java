@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@RestController("/user")
+@RestController
 public class UserController {
 
     private MemberService memberService;
 
-    @PostMapping("/add")
+    @PostMapping("/adduser")
     public ResponseEntity<Object> addUser(@RequestBody Member member) {
         return new ResponseEntity<>(memberService.addMember(member) ? HttpStatus.OK : HttpStatus.CONFLICT);
     }

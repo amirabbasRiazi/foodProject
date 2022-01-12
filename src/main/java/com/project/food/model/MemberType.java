@@ -12,6 +12,8 @@ import java.util.Collection;
 @Entity
 public class MemberType {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "typename")
