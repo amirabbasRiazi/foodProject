@@ -6,18 +6,16 @@ import lombok.RequiredArgsConstructor;
 import org.apache.catalina.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
     private MemberService memberService;
 
-    @PostMapping("/adduser")
+    @PostMapping("/add")
     public ResponseEntity<Object> addUser(@RequestBody Member member) {
         return new ResponseEntity<>(memberService.addMember(member) ? HttpStatus.OK : HttpStatus.CONFLICT);
     }

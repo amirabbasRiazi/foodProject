@@ -23,6 +23,10 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public Boolean updateMember(Member member) {
-        return null;
+        if (member.getId() == null)
+            return false;
+
+        memberRepository.save(member);
+        return true;
     }
 }

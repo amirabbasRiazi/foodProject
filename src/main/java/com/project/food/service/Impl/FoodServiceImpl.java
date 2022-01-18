@@ -6,6 +6,8 @@ import com.project.food.repository.FoodRepository;
 import com.project.food.service.FoodService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FoodServiceImpl implements FoodService {
 
@@ -22,5 +24,8 @@ public class FoodServiceImpl implements FoodService {
         return saved != null;
     }
 
-
+    @Override
+    public List<Food> findAll() {
+        return foodRepository.findAll();
+    }
 }
