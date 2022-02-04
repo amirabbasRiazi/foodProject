@@ -1,6 +1,6 @@
 package com.project.food.service.Impl;
 
-import com.project.food.model.Member;
+import com.project.food.domain.Member;
 import com.project.food.repository.MemberRepository;
 import com.project.food.service.MemberService;
 import org.springframework.stereotype.Service;
@@ -29,4 +29,11 @@ public class MemberServiceImpl implements MemberService {
         memberRepository.save(member);
         return true;
     }
+
+    @Override
+    public Member findMember(Long id) {
+        return memberRepository.findMemberById(id);
+    }
+
+
 }

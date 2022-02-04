@@ -1,9 +1,8 @@
 package com.project.food.controller;
 
-import com.project.food.model.Member;
+import com.project.food.domain.Member;
 import com.project.food.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

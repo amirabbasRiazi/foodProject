@@ -1,9 +1,11 @@
-package com.project.food.model;
+package com.project.food.domain;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -40,5 +42,15 @@ public class Member {
 
     @ManyToOne
     private Gender gender;
+
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Food> foods;
+
+
+    public List<Food> getFoods() {
+        if (foods == null)
+            this.foods = new ArrayList<>();
+        return foods;
+    }
 
 }

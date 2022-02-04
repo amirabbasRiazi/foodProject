@@ -1,4 +1,4 @@
-package com.project.food.model;
+package com.project.food.domain;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,8 +1,7 @@
-package com.project.food.model;
+package com.project.food.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 
@@ -14,6 +13,9 @@ public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Member member;
 
     @Column(name = "foodname")
     private String name;
